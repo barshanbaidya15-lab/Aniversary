@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary, My Love</title>
+    <!-- Romantic Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@200;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- GSAP for Smooth Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <!-- Custom Animated Cursor Heart Trail -->
+    <div id="custom-cursor">
+        <div class="cursor-heart">❤️</div>
+    </div>
+
+    <!-- Sky Canvas for Animated Twinkling Stars, Drifting Clouds, Falling Petals & Floating Hearts -->
+    <canvas id="sky-canvas"></canvas>
+
+    <!-- Splash Screen Gate -->
+    <div id="splash-screen">
+        <div class="splash-content">
+            <div class="anniversary-badge">🎉 Anniversary Overhaul 🎉</div>
+            <div class="pulsing-heart-wrapper">
+                <i class="fa-solid fa-heart splash-heart"></i>
+                <div class="glow-ring"></div>
+            </div>
+            <h1 class="splash-title">Happy Anniversary <span>My Love</span></h1>
+            <div class="couple-names">Barshan <i class="fa-solid fa-heart beating-heart"></i> Munmun</div>
+            <p class="splash-subtitle">A cinematic universe of our memories and devotion.</p>
+            <div class="tap-to-start-hint">
+                <i class="fa-solid fa-heart-pulse pulsing-heart"></i> Tap anywhere to enter
+            </div>
+        </div>
+    </div>
+    
+    <!-- Heart Transition Portal -->
+    <div id="heart-portal-overlay" class="heart-portal hidden">
+        <div class="portal-heart">❤️</div>
+    </div>
+
+    <!-- Audio Player Controller -->
+    <div class="music-controller hidden" id="music-container">
+        <button id="btn-music-toggle" class="music-btn" title="Toggle Music">
+            <i class="fa-solid fa-music"></i>
+            <div class="visualizer" id="music-visualizer">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-wrapper hidden" id="main-content">
+
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-container">
+                <div class="hero-text-block">
+                    <span class="anniversary-tag"><i class="fa-solid fa-sparkles"></i> 18.06.2026 <i class="fa-solid fa-sparkles"></i></span>
+                    <!-- Typewriter Target -->
+                    <h1 class="romantic-title-typewriter" id="hero-title"></h1>
+                    <p class="hero-desc" id="hero-subtitle">Every moment with you is my favorite memory.</p>
+                    <a href="#story-section" class="scroll-btn btn-love-glow">
+                        <i class="fa-solid fa-heart-pulse"></i> Enter Our Story
+                    </a>
+                </div>
+            </div>
+            <div class="scroll-down-hint">
+                <p>Scroll down to browse our chapters</p>
+                <i class="fa-solid fa-chevron-down bounce-arrow"></i>
+            </div>
+        </section>
+
+        <!-- Section 1: Our Love Story (Timeline) -->
+        <section id="story-section" class="love-section">
+            <div class="section-container">
+                <h2 class="section-title"><i class="fa-solid fa-calendar-heart"></i> Our Love Story</h2>
+                <p class="section-subtitle">Our beautiful milestones, step by step, heart by heart.</p>
+                
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    
+                    <!-- Milestone 1 -->
+                    <div class="timeline-item left-item">
+                        <div class="timeline-dot"><i class="fa-solid fa-heart"></i></div>
+                        <div class="timeline-card glass-panel">
+                            <span class="milestone-number">01</span>
+                            <h3>First Proposal On 18 June 2022</h3>
+                            <p class="milestone-date"><i class="fa-solid fa-clock"></i> June 18, 2022</p>
+                            <img src="images/first_proposal.jpg" class="timeline-img" alt="First Proposal">
+                            <p class="milestone-text">The day I held your hand and asked you to be mine. A beautiful start to our endless chapters, sealed with rings and promises.</p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 2 -->
+                    <div class="timeline-item right-item">
+                        <div class="timeline-dot"><i class="fa-solid fa-message-heart"></i></div>
+                        <div class="timeline-card glass-panel">
+                            <span class="milestone-number">02</span>
+                            <h3>First Date</h3>
+                            <p class="milestone-date"><i class="fa-solid fa-clock"></i> July 2022</p>
+                            <img src="images/first_date.jpg" class="timeline-img" alt="First Date">
+                            <p class="milestone-text">Sitting side by side, sharing sweet moments under the golden sunlight. Our very first date where we connected and fell in love even more.</p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 3 -->
+                    <div class="timeline-item left-item">
+                        <div class="timeline-dot"><i class="fa-solid fa-cake-candles"></i></div>
+                        <div class="timeline-card glass-panel">
+                            <span class="milestone-number">03</span>
+                            <h3>First Anniversary</h3>
+                            <p class="milestone-date"><i class="fa-solid fa-clock"></i> June 18, 2023</p>
+                            <img src="images/first_anniversary.jpg" class="timeline-img" alt="First Anniversary">
+                            <p class="milestone-text">One whole year of walking hand-in-hand, laughing, and loving. Standing by the lake, holding you close, I knew this was just the first of a lifetime of anniversaries together.</p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 4 -->
+                    <div class="timeline-item right-item">
+                        <div class="timeline-dot"><i class="fa-solid fa-camera-retro"></i></div>
+                        <div class="timeline-card glass-panel">
+                            <span class="milestone-number">04</span>
+                            <h3>Favorite Memories</h3>
+                            <p class="milestone-date"><i class="fa-solid fa-clock"></i> 2022 - 2026</p>
+                            <img src="images/favorite_memory.jpg" class="timeline-img" alt="Favorite Memory">
+                            <p class="milestone-text">Standing in front of the majestic palace, locked in a tight hug. This moment captures the essence of our love: warmth, comfort, and a feeling that we belong together no matter where we are.</p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 5 -->
+                    <div class="timeline-item left-item">
+                        <div class="timeline-dot"><i class="fa-solid fa-cake-candles"></i></div>
+                        <div class="timeline-card glass-panel">
+                            <span class="milestone-number">05</span>
+                            <h3>4th Anniversary Day</h3>
+                            <p class="milestone-date"><i class="fa-solid fa-clock"></i> June 18, 2026</p>
+                            <img src="images/anniversary_day.jpg" class="timeline-img" alt="4th Anniversary Day">
+                            <p class="milestone-text">Four years of holding hands, sharing dreams, and growing together. Happy 4th Anniversary to my whole world! You look absolutely stunning in your saree, and I feel like the luckiest guy beside you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Memory Gallery -->
+        <section id="gallery-section" class="love-section">
+            <div class="section-container">
+                <h2 class="section-title"><i class="fa-solid fa-images"></i> Memory Gallery</h2>
+                <p class="section-subtitle">Snapshots of our love, locked in Polaroid frames. Click on any photo to enlarge.</p>
+                
+                <div class="masonry-gallery">
+                    <!-- Polaroid 1 -->
+                    <div class="polaroid-frame" data-src="images/photo1.jpg" data-caption="Our Palace Date 🏛️">
+                        <div class="polaroid-image" style="background-image: url('images/photo1.jpg');"></div>
+                        <div class="polaroid-label">Palace Date 🏛️</div>
+                    </div>
+                    
+                    <!-- Polaroid 2 -->
+                    <div class="polaroid-frame" data-src="images/photo2.jpg" data-caption="Sweet Birthday Surprise 🎂">
+                        <div class="polaroid-image" style="background-image: url('images/photo2.jpg');"></div>
+                        <div class="polaroid-label">Birthday Surprise 🎂</div>
+                    </div>
+
+                    <!-- Polaroid 3 -->
+                    <div class="polaroid-frame" data-src="images/photo3.jpg" data-caption="Nostalgic Art Walks 🎞️">
+                        <div class="polaroid-image" style="background-image: url('images/photo3.jpg');"></div>
+                        <div class="polaroid-label">Nostalgic Walks 🎞️</div>
+                    </div>
+
+                    <!-- Polaroid 4 -->
+                    <div class="polaroid-frame" data-src="images/photo4.jpg" data-caption="Festive Saree & Kurta 🖤">
+                        <div class="polaroid-image" style="background-image: url('images/photo4.jpg');"></div>
+                        <div class="polaroid-label">Saree & Kurta 🖤</div>
+                    </div>
+
+                    <!-- Polaroid 5 -->
+                    <div class="polaroid-frame" data-src="images/photo5.jpg" data-caption="Walking into Our Future 🚶‍♂️🚶‍♀️">
+                        <div class="polaroid-image" style="background-image: url('images/photo5.jpg');"></div>
+                        <div class="polaroid-label">Our Future 🚶‍♂️🚶‍♀️</div>
+                    </div>
+
+                    <!-- Polaroid 6 -->
+                    <div class="polaroid-frame" data-src="images/hugging_behind.jpg" data-caption="Safe in Your Hug 🌿">
+                        <div class="polaroid-image" style="background-image: url('images/hugging_behind.jpg');"></div>
+                        <div class="polaroid-label">Safe in Your Hug 🌿</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Modal for Gallery -->
+        <div id="lightbox-modal" class="lightbox">
+            <span class="lightbox-close">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+
+        <!-- Section 3: Love Counter -->
+        <section id="counter-section" class="love-section">
+            <div class="section-container">
+                <h2 class="section-title"><i class="fa-solid fa-heart-pulse pulsing-heart"></i> Together For</h2>
+                <p class="section-subtitle">Every second we've shared, ticking up with every beat of our hearts.</p>
+                
+                <div class="counter-dashboard glass-panel">
+                    <div class="counter-grid">
+                        <div class="counter-box">
+                            <span class="counter-num" id="count-years">0</span>
+                            <span class="counter-label">Years</span>
+                        </div>
+                        <div class="counter-box">
+                            <span class="counter-num" id="count-months">0</span>
+                            <span class="counter-label">Months</span>
+                        </div>
+                        <div class="counter-box">
+                            <span class="counter-num" id="count-days">0</span>
+                            <span class="counter-label">Days</span>
+                        </div>
+                        <div class="counter-box">
+                            <span class="counter-num" id="count-hours">0</span>
+                            <span class="counter-label">Hours</span>
+                        </div>
+                        <div class="counter-box">
+                            <span class="counter-num" id="count-minutes">0</span>
+                            <span class="counter-label">Minutes</span>
+                        </div>
+                        <div class="counter-box">
+                            <span class="counter-num text-glow" id="count-seconds">0</span>
+                            <span class="counter-label">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Reasons Why I Love You -->
+        <section id="reasons-section" class="love-section">
+            <div class="section-container">
+                <h2 class="section-title"><i class="fa-solid fa-circle-question"></i> Reasons Why I Love You</h2>
+                <p class="section-subtitle">A few little sparkles of why you make my heart so happy. Click a card to flip it!</p>
+                
+                <div class="reasons-grid">
+                    <!-- Reason Card 1 -->
+                    <div class="reason-card-wrapper">
+                        <div class="reason-card">
+                            <div class="card-side front-side glass-panel">
+                                <i class="fa-solid fa-heart card-icon red-glow"></i>
+                                <h3>Your Smile</h3>
+                                <p class="flip-hint">Click to flip</p>
+                            </div>
+                            <div class="card-side back-side glass-panel">
+                                <h3>Your Smile ❤️</h3>
+                                <p class="reason-text">The way your smile brightens up the darkest of my days, acting as a warm beacon of sunshine that instantly chases away all my stress.</p>
+                                <img src="images/smile_card.jpg" alt="Your Smile Photo" class="reason-card-photo">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reason Card 2 -->
+                    <div class="reason-card-wrapper">
+                        <div class="reason-card">
+                            <div class="card-side front-side glass-panel">
+                                <i class="fa-solid fa-seedling card-icon pink-glow"></i>
+                                <h3>Your Kindness</h3>
+                                <p class="flip-hint">Click to flip</p>
+                            </div>
+                            <div class="card-side back-side glass-panel">
+                                <h3>Your Kindness 🌸</h3>
+                                <p class="reason-text">How gently you treat the world and how deeply you care. Your soft heart is the most beautiful thing about you, and I strive to match it.</p>
+                                <img src="images/kindness_card.jpg" alt="Your Kindness Photo" class="reason-card-photo">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reason Card 3 -->
+                    <div class="reason-card-wrapper">
+                        <div class="reason-card">
+                            <div class="card-side front-side glass-panel">
+                                <i class="fa-solid fa-hands-holding-heart card-icon purple-glow"></i>
+                                <h3>Your Care</h3>
+                                <p class="flip-hint">Click to flip</p>
+                            </div>
+                            <div class="card-side back-side glass-panel">
+                                <h3>Your Care 😊</h3>
+                                <p class="reason-text">How you look after me and remember every tiny detail about my likes. In your warmth, I have found my safest refuge and my home.</p>
+                                <img src="images/care_card.jpg" alt="Your Care Photo" class="reason-card-photo">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reason Card 4 -->
+                    <div class="reason-card-wrapper">
+                        <div class="reason-card">
+                            <div class="card-side front-side glass-panel">
+                                <i class="fa-solid fa-eye card-icon gold-glow"></i>
+                                <h3>Your Eyes</h3>
+                                <p class="flip-hint">Click to flip</p>
+                            </div>
+                            <div class="card-side back-side glass-panel">
+                                <h3>Your Eyes ✨</h3>
+                                <p class="reason-text">The universe shines in your gaze. Whenever I look into your beautiful eyes, I see my entire future looking right back at me.</p>
+                                <img src="images/eyes_card.jpg" alt="Your Eyes Photo" class="reason-card-photo">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reason Card 5 -->
+                    <div class="reason-card-wrapper">
+                        <div class="reason-card">
+                            <div class="card-side front-side glass-panel">
+                                <i class="fa-solid fa-star card-icon rose-glow"></i>
+                                <h3>Everything About You</h3>
+                                <p class="flip-hint">Click to flip</p>
+                            </div>
+                            <div class="card-side back-side glass-panel">
+                                <h3>Everything About You 💕</h3>
+                                <p class="reason-text">Your silly laughs, forehead kisses, supportive words, and complete devotion. I love you exactly as you are, forever and ever.</p>
+                                <img src="images/everything_card.jpg" alt="Everything About You Photo" class="reason-card-photo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Love Letters -->
+        <section id="letters-section" class="love-section">
+            <div class="section-container">
+                <h2 class="section-title"><i class="fa-solid fa-envelope-open-text"></i> Love Letters</h2>
+                <p class="section-subtitle">Letters sealed with absolute devotion. Click an envelope to open and read its contents.</p>
+                
+                <div class="envelopes-grid">
+                    <!-- Letter 1 -->
+                    <div class="envelope-container">
+                        <div class="envelope" data-letter="0">
+                            <div class="flap"></div>
+                            <div class="pocket"></div>
+                            <div class="letter-sheet">
+                                <div class="letter-text">"Thank you for making my life beautiful."</div>
+                            </div>
+                            <div class="wax-seal"><i class="fa-solid fa-heart"></i></div>
+                        </div>
+                        <span class="envelope-tag">Letter I</span>
+                    </div>
+
+                    <!-- Letter 2 -->
+                    <div class="envelope-container">
+                        <div class="envelope" data-letter="1">
+                            <div class="flap"></div>
+                            <div class="pocket"></div>
+                            <div class="letter-sheet">
+                                <div class="letter-text">"You are my happiness and my peace."</div>
+                            </div>
+                            <div class="wax-seal"><i class="fa-solid fa-heart"></i></div>
+                        </div>
+                        <span class="envelope-tag">Letter II</span>
+                    </div>
+
+                    <!-- Letter 3 -->
+                    <div class="envelope-container">
+                        <div class="envelope" data-letter="2">
+                            <div class="flap"></div>
+                            <div class="pocket"></div>
+                            <div class="letter-sheet">
+                                <div class="letter-text">"I promise to love you forever."</div>
+                            </div>
+                            <div class="wax-seal"><i class="fa-solid fa-heart"></i></div>
+                        </div>
+                        <span class="envelope-tag">Letter III</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Romantic Video Slideshow -->
+        <section id="video-section" class="love-section">
+            <div class="section-container">
+                <h2 class="section-title"><i class="fa-solid fa-film"></i> Romantic Video</h2>
+                <p class="section-subtitle">Our Beautiful Journey Together</p>
+                
+                <!-- Movie Reel Slideshow -->
+                <div class="movie-reel-player glass-panel">
+                    <div class="movie-viewport">
+                        <div class="movie-slide active" style="background-image: url('images/video_photo1.jpg');">
+                            <div class="movie-caption">Chapter 1: Walking Hand in Hand 🌿</div>
+                        </div>
+                        <div class="movie-slide" style="background-image: url('images/video_photo2.jpg');">
+                            <div class="movie-caption">Chapter 2: Sweetest Smiles 💕</div>
+                        </div>
+                        <div class="movie-slide" style="background-image: url('images/video_photo3.jpg');">
+                            <div class="movie-caption">Chapter 3: Golden Hour Moments ☀️</div>
+                        </div>
+                        <div class="movie-slide" style="background-image: url('images/video_photo4.jpg');">
+                            <div class="movie-caption">Chapter 4: Cozy Date Nights 🍿</div>
+                        </div>
+                        <div class="movie-slide" style="background-image: url('images/video_photo5.png');">
+                            <div class="movie-caption">Chapter 5: Every Step with You 👟</div>
+                        </div>
+                        
+                        <div class="movie-controls">
+                            <button id="btn-movie-prev" class="movie-ctrl-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button id="btn-movie-play" class="movie-ctrl-btn"><i class="fa-solid fa-pause"></i></button>
+                            <button id="btn-movie-next" class="movie-ctrl-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="sprocket-holes top-holes"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                    <div class="sprocket-holes bottom-holes"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Surprise Gift -->
+        <section id="gift-section" class="love-section">
+            <div class="section-container">
+                <h2 class="section-title"><i class="fa-solid fa-gift"></i> Surprise Gift</h2>
+                <p class="section-subtitle">A little token centered in my heart. Click the gift box to open it!</p>
+                
+                <div class="gift-box-wrapper">
+                    <!-- 3D Gift Box -->
+                    <div class="gift-box-3d" id="gift-box-el">
+                        <div class="gift-lid">
+                            <div class="lid-ribbon-x"></div>
+                            <div class="lid-ribbon-y"></div>
+                            <div class="lid-top"></div>
+                            <div class="lid-front"></div>
+                            <div class="lid-back"></div>
+                            <div class="lid-left"></div>
+                            <div class="lid-right"></div>
+                        </div>
+                        <div class="gift-body">
+                            <div class="box-ribbon-x"></div>
+                            <div class="box-ribbon-y"></div>
+                            <div class="box-front"></div>
+                            <div class="box-back"></div>
+                            <div class="box-left"></div>
+                            <div class="box-right"></div>
+                            <div class="box-bottom"></div>
+                        </div>
+                    </div>
+                    <!-- Revealed Gift Message -->
+                    <div class="gift-message-panel glass-panel hidden" id="gift-msg-el">
+                        <i class="fa-solid fa-heart pulsing-heart"></i>
+                        <h3>You are the best gift in my life ❤️</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Final Message & Proposal -->
+        <section id="proposal-section" class="love-section">
+            <div class="section-container">
+                <div class="final-letter-card glass-panel">
+                    <div class="letter-header-icon"><i class="fa-solid fa-feather-pointed"></i></div>
+                    
+                    <!-- Typewriter Target for final message -->
+                    <div class="final-letter-content" id="final-message-text"></div>
+                    
+                    <!-- Proposal Action -->
+                    <div class="proposal-action hidden" id="proposal-action-block">
+                        <button class="btn-love-glow btn-pulse" id="btn-proposal">
+                            <i class="fa-solid fa-heart-circle-check"></i> Will you continue this beautiful journey with me?
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proposal Success Overlay (Fireworks, Rose petals, Grand reveal) -->
+        <div id="proposal-success-overlay" class="proposal-success hidden">
+            <div class="success-content">
+                <div class="success-ring"></div>
+                <h1 class="success-text text-glow-heavy">I LOVE YOU FOREVER ❤️</h1>
+                <p class="success-sub">Our chapters will never end...</p>
+                <div class="success-confetti-spawner"></div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="love-footer">
+            <p>Designed with ❤️ by Barshan for his precious girlfriend Munmun</p>
+            <p class="footer-sub">&copy; 2026. All our chapters, forever and always.</p>
+        </footer>
+
+    </div>
+
+    <!-- App Logic -->
+    <script src="content.js"></script>
+</body>
+</html>

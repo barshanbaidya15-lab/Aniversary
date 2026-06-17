@@ -1,0 +1,13 @@
+{
+  "name": "servimart",
+  "version": "1.0.0",
+  "description": "ServiMart - E-Commerce and Hourly Worker Booking Platform",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.2.0"
+  }
+}
